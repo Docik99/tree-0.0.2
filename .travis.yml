@@ -22,7 +22,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main' 
+            - sourceline: 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main'
               key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - ubuntu-toolchain-r-test
           packages: ['clang-5.0']
@@ -33,11 +33,11 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main' 
+            - sourceline: 'deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main'
               key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
             - ubuntu-toolchain-r-test
           packages: ['clang-5.0']
-          
+
     - os: osx
       osx_image: xcode8.3
       compiler: clang
@@ -72,5 +72,4 @@ before_script:
   - cmake -H. -B_builds -DBUILD_TESTS=ON
 script:
 - cmake --build _builds
-- cmake --build _builds --target tests
 - cmake --build _builds --target test -- ARGS=--verbose
