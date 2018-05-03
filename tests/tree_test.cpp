@@ -266,13 +266,3 @@ TAST_CASE("exception")
   tree<int> tree;
   REQUIRE_THROWS (tree.print(cout));
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
