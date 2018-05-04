@@ -263,6 +263,6 @@ TEST_CASE("initializer_list")
   
 TEST_CASE("exception")
 {
-  tree<int> tree;
+  tree_t<int> tree;
   REQUIRE_THROWS (tree.print(cout));
 }
