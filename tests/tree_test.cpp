@@ -9,8 +9,7 @@ TEST_CASE("insert and print")
     "--------12\n"
     "----8\n"
     "--------5\n"
-    "------------1\n"
-  };
+    "------------1\n"};
   tree.insert(8);
   tree.insert(12);
   tree.insert(5);
