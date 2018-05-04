@@ -1,8 +1,6 @@
 #include <catch.hpp>
 #include "tree.hpp"
-#include <sstream>
-
-using namespace std;
+//#include <sstream>
 
 TEST_CASE("insert and print")
 {
