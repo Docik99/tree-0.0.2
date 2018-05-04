@@ -14,7 +14,7 @@ TEST_CASE("insert and print")
   tree.insert(5);
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == print);
+  REQUIRE(ostream.str() == wait);
 }
 
 TEST_CASE("find key in tree")
@@ -40,7 +40,7 @@ TEST_CASE("remove type 1")
   tree.insert(7);
   tree.insert(3);
   tree.insert(12);
-  string wait {
+  string wait_b {
     "--------------------12\n"
     "----------------11\n"
     "------------10\n"
@@ -51,8 +51,8 @@ TEST_CASE("remove type 1")
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
-  string tree_after {
+  REQUIRE(ostream.str() == wait_b);
+  string wait_a {
     "---------------12\n"
     "-----------11\n"
     "-------10\n"
@@ -64,7 +64,7 @@ TEST_CASE("remove type 1")
   REQUIRE(tree.remove(23) == false);
   REQUIRE(tree.remove(8) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
 
 TEST_CASE(" remove type 2")
@@ -78,7 +78,7 @@ TEST_CASE(" remove type 2")
   tree.insert(16);
   tree.insert(7);
   tree.insert(3);
-  string tree_before {
+  string wait_b {
     "--------20\n"
     "------------19\n"
     "----------------18\n"
@@ -90,8 +90,8 @@ TEST_CASE(" remove type 2")
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
-  string tree_after {
+  REQUIRE(ostream.str() == wait_b);
+  string wait_a {
     "--------20\n"
     "------------19\n"
     "--------------------16\n"
@@ -104,7 +104,7 @@ TEST_CASE(" remove type 2")
   REQUIRE(tree.remove(13) == false);
   REQUIRE(tree.remove(8) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
 
 TEST_CASE(" remove type 3")
@@ -115,7 +115,7 @@ TEST_CASE(" remove type 3")
   tree.insert(20);
   tree.insert(17);
   tree.insert(22);
-  string tree_before {
+  string wait_b {
     "------------22\n"
     "--------20\n"
     "------------17\n"
@@ -124,8 +124,8 @@ TEST_CASE(" remove type 3")
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
-  string tree_after {
+  REQUIRE(ostream.str() == wait_b);
+  string  wait_a {
     "--------22\n"
     "------------17\n"
     "----12\n"
@@ -135,7 +135,7 @@ TEST_CASE(" remove type 3")
   REQUIRE(tree.remove(13) == false);
   REQUIRE(tree.remove(20) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
   
 TEST_CASE("remove type 4")
@@ -149,7 +149,7 @@ TEST_CASE("remove type 4")
   tree.insert(18);
   tree.insert(13);
   tree.insert(14);
-  string tree_before {
+  string wait_b {
     "--------20\n"
     "------------19\n"
     "--------------------18\n"
@@ -159,7 +159,7 @@ TEST_CASE("remove type 4")
     "----8\n"
     "--------7\n"
   };
-  string tree_after {
+  string wait_a {
     "--------20\n"
     "------------19\n"
     "--------------------18\n"
@@ -170,12 +170,12 @@ TEST_CASE("remove type 4")
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
+  REQUIRE(ostream.str() == wait_b);
   REQUIRE(tree.remove(11) == false);
   REQUIRE(tree.remove(27) == false);
   REQUIRE(tree.remove(8) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
 
 TEST_CASE("remove type 5") 
@@ -186,14 +186,14 @@ TEST_CASE("remove type 5")
   tree.insert(20);
   tree.insert(17);
   tree.insert(16);
-  string tree_before {
+  string wait_b {
     "--------20\n"
     "------------17\n"
     "----------------16\n"
     "----12\n"
     "--------7\n"
   };
-  string tree_after {
+  string wait_a {
   "--------17\n"
   "------------16\n"
   "----12\n"
@@ -201,12 +201,12 @@ TEST_CASE("remove type 5")
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
+  REQUIRE(ostream.str() == wait_b);
   REQUIRE(tree.remove(11) == false);
   REQUIRE(tree.remove(27) == false);
   REQUIRE(tree.remove(20) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
 
 TEST_CASE("remove type 6")
@@ -215,23 +215,23 @@ TEST_CASE("remove type 6")
   tree.insert(12);
   tree.insert(7);
   tree.insert(20);
-  string tree_before {
+  string wait_b {
     "--------20\n"
     "----12\n"
     "--------7\n"
   };
-  string tree_after {
+  string wait_a {
   "----12\n"
   "--------7\n"
   };
   ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before);
+  REQUIRE(ostream.str() == wait_b);
   REQUIRE(tree.remove(11) == false);
   REQUIRE(tree.remove(27) == false);
   REQUIRE(tree.remove(20) == true);
   tree.print(ostream);
-  REQUIRE(ostream.str() == tree_before + tree_after);
+  REQUIRE(ostream.str() == wait_b + wait_a);
 }
   
 TEST_CASE("compare")
