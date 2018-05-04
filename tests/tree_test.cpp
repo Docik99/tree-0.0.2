@@ -1,6 +1,6 @@
 #include <catch.hpp>
 #include "tree.hpp"
-//#include <sstream>
+#include <sstream>
 
 TEST_CASE("insert and print")
 {
