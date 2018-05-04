@@ -5,7 +5,7 @@
 TEST_CASE("insert and print")
 {
   tree_t<int> tree;
-  string print {
+  string wait {
         "------------5\n"
         "--------12\n"
         "----8\n" };
