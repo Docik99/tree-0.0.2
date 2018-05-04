@@ -2,6 +2,8 @@
 #include "tree.hpp"
 #include <sstream>
 
+using namespace std;
+
 TEST_CASE("insert and print")
 {
   tree_t<int> tree;
