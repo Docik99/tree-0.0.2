@@ -47,8 +47,7 @@ TEST_CASE("remove type 1")
     "--------9\n"
     "----8\n"
     "--------7\n"
-    "------------3\n"
-  };
+    "------------3\n" };
   ostringstream ostream;
   tree.print(ostream);
   REQUIRE(ostream.str() == wait1);
