@@ -237,7 +237,7 @@ TEST_CASE("remove type 6")
   
 TEST_CASE("compare")
 {
-  tree_t<int> tree1{23,12,3,45,57,33}, tree2{23,45,57,33,12,3};
+  tree_t<int> tree1{23,12,3,45,57,33}, tree2{23,12,3,45,57,33};
   REQUIRE((tree1==tree2) == true);
   tree1.remove(23);
   tree2.insert(8);
