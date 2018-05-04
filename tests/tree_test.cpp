@@ -8,12 +8,12 @@ TEST_CASE("insert and print")
 {
   tree_t<int> tree;
   string wait {
-        "------------5\n"
+        "------------20\n"
         "--------12\n"
         "----8\n" };
   tree.insert(8);
   tree.insert(12);
-  tree.insert(5);
+  tree.insert(20);
   ostringstream ostream;
   tree.print(ostream);
   REQUIRE(ostream.str() == wait);
