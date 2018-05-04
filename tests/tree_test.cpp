@@ -40,7 +40,7 @@ TEST_CASE("remove type 1")
   tree.insert(7);
   tree.insert(3);
   tree.insert(12);
-  string tree_before {
+  string wait {
     "--------------------12\n"
     "----------------11\n"
     "------------10\n"
