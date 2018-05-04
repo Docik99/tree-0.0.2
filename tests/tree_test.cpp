@@ -2,7 +2,7 @@
 #include "tree.hpp"
 #include <sstream>
 
-TAST_CASE("insert and print")
+TEST_CASE("insert and print")
 {
   tree_t<int> tree;
   string print {
@@ -20,7 +20,7 @@ TAST_CASE("insert and print")
   REQUIRE(ostream.str() == print);
 }
 
-TAST_CASE("find key in tree")
+TEST_CASE("find key in tree")
 {
   tree_t<int> tree;
   tree.insert(8);
@@ -33,7 +33,7 @@ TAST_CASE("find key in tree")
   REQUIRE(tree.find(0) == false);
 }
 
-TAST_CASE("remove type 1")
+TEST_CASE("remove type 1")
 {
   tree_t<int> tree;
   tree.insert(8);
@@ -70,7 +70,7 @@ TAST_CASE("remove type 1")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
 
-TAST_CASE(" remove type 2")
+TEST_CASE(" remove type 2")
 {
   tree_t<int> tree;
   tree.insert(8);
@@ -110,7 +110,7 @@ TAST_CASE(" remove type 2")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
 
-TAST_CASE(" remove type 3")
+TEST_CASE(" remove type 3")
 {
   tree_t<int> tree;
   tree.insert(12);
@@ -141,7 +141,7 @@ TAST_CASE(" remove type 3")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
   
-TAST_CASE("remove type 4")
+TEST_CASE("remove type 4")
 {
   tree_t<int> tree;
   tree.insert(8);
@@ -181,7 +181,7 @@ TAST_CASE("remove type 4")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
 
-TAST_CASE("remove type 5") 
+TEST_CASE("remove type 5") 
 {
   tree_t<int> tree;
   tree.insert(12);
@@ -212,7 +212,7 @@ TAST_CASE("remove type 5")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
 
-TAST_CASE("remove type 6")
+TEST_CASE("remove type 6")
 {
   tree_t<int> tree;
   tree.insert(12);
@@ -237,7 +237,7 @@ TAST_CASE("remove type 6")
   REQUIRE(ostream.str() == tree_before + tree_after);
 }
   
-TAST_CASE("compare")
+TEST_CASE("compare")
 {
   tree_t<int> tree1{23,12,3,45,57,33}, tree2{23,45,33,57,12,3};
   REQUIRE((tree1==tree2) == true);
@@ -246,7 +246,7 @@ TAST_CASE("compare")
   REQUIRE((tree1==tree2) == false);
 }
 
-TAST_CASE("initializer_list")
+TEST_CASE("initializer_list")
 {
   tree_t<int> tree {0,2,4,61,120} ;
     string keys {
@@ -261,7 +261,7 @@ TAST_CASE("initializer_list")
     REQUIRE(ostream.str()==keys);
 }
   
-TAST_CASE("exception")
+TEST_CASE("exception")
 {
   tree<int> tree;
   REQUIRE_THROWS (tree.print(cout));
