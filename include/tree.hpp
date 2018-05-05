@@ -46,14 +46,15 @@ private:
 
         bool find_t(T new_value) const {
             if (value == new_value) return true;
-            if (value < new_value) {
+            else if (value < new_value) {
                 if (right != nullptr) return right->find_t(new_value);
                 else return false;
             }
-            if (value > new_value) {
+            else if (value > new_value) {
                 if (left != nullptr) return left->find_t(new_value);
                 else return false;
             }
+            else return false;
         }
     };
 private:
