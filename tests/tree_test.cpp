@@ -253,7 +253,7 @@ TEST_CASE("compare")
   tree_t<int> tree1;
   tree1.insert(9);
   tree_t<int> tree2;
-  tree2.insert(9)
+  tree2.insert(9);
   REQUIRE((tree1==tree2) == true);
   tree2.insert(8);
   REQUIRE((tree1==tree2) == false);
