@@ -257,20 +257,6 @@ TEST_CASE("remove type 6")
   REQUIRE((tree1==tree2) == false);
 }*/
 
-TEST_CASE("compare")
-{
-  tree_t<int> tree1{23,12,3}, tree2{23,12,3};
-  ostringstream ostream;
-  tree1.print(ostream);
-  tree2.print(ostream);
-  string tree_before {
-    "--------20\n"
-    "----12\n"
-    "--------7\n"
-  };
-  REQUIRE(ostream.str()==tree_before);
-}
-
 TEST_CASE("initializer_list")
 {
   tree_t<int> tree {0,2,4,61,120} ;
