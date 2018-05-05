@@ -263,7 +263,12 @@ TEST_CASE("compare")
   ostringstream ostream;
   tree1.print(ostream);
   tree2.print(ostream);
-  REQUIRE(ostream.str());
+  string tree_before {
+    "--------20\n"
+    "----12\n"
+    "--------7\n"
+  };
+  REQUIRE(ostream.str()==tree_before);
 }
 
 TEST_CASE("initializer_list")
