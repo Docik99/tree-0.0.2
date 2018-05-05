@@ -55,11 +55,6 @@ private:
                 else return false;
             }
         }
-
-        bool srav_t(node_t *f_tree, node_t *s_tree, bool srav){
-
-        }
-
     };
 private:
     node_t * root_;
