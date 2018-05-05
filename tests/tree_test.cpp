@@ -20,6 +20,17 @@ TEST_CASE("insert and print")
   REQUIRE(ostream.str() == print);
 }
 
+TEST_CASE("print empty tree")
+{
+  tree_t<int> tree;
+  string print {
+    "Tree is empty\n"};
+  ostringstream ostream;
+  tree.print(ostream);
+  REQUIRE(ostream.str() == print);
+}
+
+
 TEST_CASE("find key in tree")
 {
   tree_t<int> tree;
@@ -61,7 +72,7 @@ TEST_CASE("remove type 1")
     "--------10\n"
     "----9\n"
     "--------7\n"
-    "-----------3\n"
+    "------------3\n"
   };
   REQUIRE(tree.remove(1) == false);
   REQUIRE(tree.remove(23) == false);
@@ -259,11 +270,4 @@ TEST_CASE("initializer_list")
     ostringstream ostream;
     tree.print(ostream);
     REQUIRE(ostream.str()==keys);
-}
-  
-TEST_CASE("exception")
-{
-  tree_t<int> tree;
-  ostringstream ostream;
-  REQUIRE_THROWS (tree.print(ostream));
 }
