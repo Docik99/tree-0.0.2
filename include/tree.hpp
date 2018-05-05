@@ -89,8 +89,11 @@ public:
 
     bool comp(node_t *f_tree, node_t *s_tree) {
         if (f_tree == nullptr && s_tree == nullptr) return true;
-        else if (f_tree != s_tree) return  false;
-        else return ( comp(f_tree->left, s_tree->left) && comp(f_tree->right, s_tree->right) );
+        else if (f_tree != nullptr && s_tree != nullptr) {
+            if (f_tree->value != s_tree->value) return false;
+            else return ( comp(f_tree->left, s_tree->left) && comp(f_tree->right, s_tree->right) );
+        }
+        else return false;
     }
 
     bool remove(T new_value){
