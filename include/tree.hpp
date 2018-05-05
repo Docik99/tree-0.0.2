@@ -55,7 +55,7 @@ private:
                 else return false;
             }
         }
-    };
+    }
 private:
     node_t * root_;
 public:
