@@ -166,6 +166,6 @@ public:
         if (root_ != nullptr) {
             root_->print_t(stream, 0);
         }
-        else cout << "Tree is empty\n";
+        else stream << "Tree is empty\n";
     }
 };
