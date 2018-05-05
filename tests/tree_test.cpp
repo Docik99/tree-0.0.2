@@ -263,6 +263,7 @@ TEST_CASE("compare")
   ostringstream ostream;
   tree1.print(ostream);
   tree2.print(ostream);
+  REQUIRE(ostream.str());
 }
 
 TEST_CASE("initializer_list")
