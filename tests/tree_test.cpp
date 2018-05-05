@@ -16,8 +16,7 @@ TEST_CASE("insert and print")
   tree.insert(5);
   tree.insert(1);
   ostringstream ostream;
-  tree.print(ostream);
-  REQUIRE(ostream.str() == print);
+  REQUIRE(tree.print(ostream) == print);
 }
 
 TEST_CASE("find key in tree")
