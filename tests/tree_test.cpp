@@ -56,12 +56,12 @@ TEST_CASE("remove type 1")
   tree.print(ostream);
   REQUIRE(ostream.str() == tree_before);
   string tree_after {
-    "---------------12\n"
-    "-----------11\n"
-    "-------10\n"
+    "----------------12\n"
+    "------------11\n"
+    "--------10\n"
     "----9\n"
-    "-------7\n"
-    "----------3\n"
+    "--------7\n"
+    "-----------3\n"
   };
   REQUIRE(tree.remove(1) == false);
   REQUIRE(tree.remove(23) == false);
@@ -239,7 +239,7 @@ TEST_CASE("remove type 6")
   
 TEST_CASE("compare")
 {
-  tree_t<int> tree1{23,12,3,45,57,33}, tree2{23,45,33,57,12,3};
+  tree_t<int> tree1{23,12,3}, tree2{23,12,3};
   REQUIRE((tree1==tree2) == true);
   tree1.remove(23);
   tree2.insert(8);
@@ -264,5 +264,5 @@ TEST_CASE("initializer_list")
 TEST_CASE("exception")
 {
   tree_t<int> tree;
-  REQUIRE_THROWS (tree.print(cout));
+  REQUIRE_THROWS (tree.print(stream));
 }
