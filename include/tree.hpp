@@ -169,7 +169,7 @@ public:
 
     void print(ostream & stream) const {
         if (root_ != nullptr) {
-            root_->print_t(cout, 0);
+            root_->print_t(stream, 0);
         }
         else cout << "Tree is empty\n";
     }
