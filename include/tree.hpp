@@ -39,8 +39,8 @@ private:
 
         void print_t(ostream & stream, int range) const {
             if (right != nullptr) right->print_t(stream, range + 4);
-            for (int i = 0; i < range + 4; i++) cout << '-';
-            cout << value << '\n';
+            for (int i = 0; i < range + 4; i++) stream << '-';
+            stream << value << '\n';
             if (left != nullptr) left->print_t(stream, range + 4);
         }
 
