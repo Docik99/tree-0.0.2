@@ -2,21 +2,19 @@
 #include "tree.hpp"
 #include <sstream>
 
-using namespace std;
-
-TEST_CASE("insert and print")
+TEST_CASE(" insert and print ")
 {
-  tree_t<int> tree;
-  string wait {
-        "------------20\n"
-        "--------12\n"
-        "----8\n" };
-  tree.insert(8);
-  tree.insert(12);
-  tree.insert(20);
-  ostringstream ostream;
-  tree.print(ostream);
-  REQUIRE(ostream.str() == wait);
+    tree_t<float> tree;
+    tree.insert(2.3);
+    tree.insert(5.4);
+    tree.insert(6.8);
+    string wait {
+        "------------6.8\n"
+        "--------5.4\n"
+        "----2.3\n" };
+    ostringstream ostream;
+    tree.print(ostream);
+    REQUIRE(ostream.str()==wait);
 }
 
 TEST_CASE("find key in tree")
