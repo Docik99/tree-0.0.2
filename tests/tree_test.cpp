@@ -40,17 +40,7 @@ TEST_CASE("remove type 1")
   tree.insert(7);
   tree.insert(3);
   tree.insert(12);
-  string wait1 {
-    "--------------------12\n"
-    "----------------11\n"
-    "------------10\n"
-    "--------9\n"
-    "----8\n"
-    "--------7\n"
-    "------------3\n" };
-  ostringstream ostream;
-  tree.print(ostream);
-  REQUIRE(ostream.str() == wait1);
+  
   string wait2 {
     "---------------12\n"
     "-----------11\n"
@@ -62,8 +52,9 @@ TEST_CASE("remove type 1")
   REQUIRE(tree.remove(1) == false);
   REQUIRE(tree.remove(23) == false);
   REQUIRE(tree.remove(8) == true);
+  ostringstream ostream;
   tree.print(ostream);
-  REQUIRE(ostream.str() == wait1 + wait2);
+  REQUIRE(ostream.str() == wait2);
 }
 
 TEST_CASE(" remove type 2")
