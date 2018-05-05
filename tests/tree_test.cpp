@@ -264,5 +264,6 @@ TEST_CASE("initializer_list")
 TEST_CASE("exception")
 {
   tree_t<int> tree;
-  REQUIRE_THROWS (tree.print(stream));
+  ostringstream ostream;
+  REQUIRE_THROWS (tree.print(ostream));
 }
