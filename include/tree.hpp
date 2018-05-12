@@ -131,7 +131,6 @@ public:
                     data->value = second->value;
                     if (second->right != nullptr) { // если у крайнего левого есть правые ответвления
                         first->left = second->right;
-                        first->left = nullptr;
                         delete second;
                     }
                     else {
