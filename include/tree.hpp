@@ -130,18 +130,14 @@ public:
                     }
                     data->value = second->value;
                     if (second->right != nullptr) { // если у крайнего левого есть правые ответвления
-                        if (first->right == nullptr) { // если у предыдущего левого нет правого
-                            first->right = second->right;
-                            first->left = nullptr;
-                        }
-                        else {
-                            first->left = nullptr;
-                            first = first->right;
-                            while (first->left != nullptr) first = first->left;
-                            first->left = second->right;
-                        }
+                        first->left = second->right;
+                        first->left = nullptr;
+                        delete second;
                     }
-                    else first->left = nullptr;
+                    else {
+                        first->left = nullptr;
+                        delete second;
+                    }
                 }
             }
             else if (first->left != nullptr) { // если нет правого но есть левое
