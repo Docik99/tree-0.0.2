@@ -139,7 +139,7 @@ public:
                     }
                 }
             }
-            else if (first->left != nullptr) { // если нет правого но есть левое
+            else if (first->left != nullptr) { // если нет правого но есть левое.
                 if (root_ != first) {
                     if (second->right == nullptr) second->left = first->left;
                     else second->right = first->left;
