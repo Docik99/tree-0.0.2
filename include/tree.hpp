@@ -132,7 +132,6 @@ public:
                     if (second->right != nullptr) { // если у крайнего левого есть правые ответвления
                         first->left = second->right;
                         second->right = nullptr;
-                        * second = nullptr;
                         delete second;
                     }
                     else {
