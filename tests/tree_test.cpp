@@ -88,16 +88,22 @@ TEST_CASE(" remove type 2")
   tree.insert(20);
   tree.insert(19);
   tree.insert(18);
+  tree.insert(10);
+  tree.insert(12);
   tree.insert(15);
   tree.insert(16);
+  tree.insert(13);
   tree.insert(7);
   tree.insert(3);
   string tree_before {
     "--------20\n"
     "------------19\n"
     "----------------18\n"
-    "------------------------16\n"
-    "--------------------15\n"
+    "--------------------------------16\n"
+    "----------------------------15\n"
+    "--------------------------------13\n"
+    "------------------------12\n"
+    "--------------------10\n"
     "----8\n"
     "--------7\n"
     "------------3\n"
@@ -109,13 +115,16 @@ TEST_CASE(" remove type 2")
     "--------20\n"
     "------------19\n"
     "----------------18\n"
-    "--------------------16\n"
-    "----15\n"
+    "----------------------------16\n"
+    "------------------------15\n"
+    "----------------------------13\n"
+    "--------------------12\n"
+    "----10\n"
     "--------7\n"
     "------------3\n"
   };
-  REQUIRE(tree.remove(11) == false);
-  REQUIRE(tree.remove(13) == false);
+  REQUIRE(tree.remove(21) == false);
+  REQUIRE(tree.remove(27) == false);
   REQUIRE(tree.remove(8) == true);
   tree.print(ostream);
   REQUIRE(ostream.str() == tree_before + tree_after);
